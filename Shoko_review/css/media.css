@@ -1,0 +1,85 @@
+﻿@media screen and (max-width: 1800px) {
+    .rating:not(:checked) > label {
+        padding-right: 7.3%
+    }
+}
+@media screen and (max-width: 500px) {
+    .rating:not(:checked) > label {
+        padding-right: 7.3%
+    }
+}
+@media screen and (max-width: 450px) {
+    .rating:not(:checked) > label {
+        padding-right: 8%
+    }
+}
+@media screen and (max-width: 414px) {
+    .rating:not(:checked) > label {
+        padding-right: 7%
+    }
+    .text{
+        font-size: 12px
+    }
+}
+@media screen and (max-width: 412px) {
+    .rating:not(:checked) > label {
+        padding-right: 5%
+    }
+    h1{
+        font-size:25px
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .rating:not(:checked) > label {
+        padding-right: 4%
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .rating:not(:checked) > label {
+        padding-right: 3%
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .rating:not(:checked) > label {
+        padding-right: 2%
+    }
+}
+
+/*@media screen and (max-width: 429px) {
+    .rating:not(:checked) > label {
+        font-size: 300%;
+    }
+   
+}
+
+@media screen and (max-width: 402px) {
+    .rating:not(:checked) > label {
+        font-size: 320%;
+    }
+}
+
+    @media screen and (max-width: 372px) {
+        .rating {
+            max-width: 90%;
+        }
+
+            .comm {
+            width: 85%
+        }
+        
+    }
+
+    @media screen and (max-width: 358px) {
+        body {
+            font-size: 12px
+        }
+
+        p {
+            font-size: 18px;
+        }
+    }*/
+
+

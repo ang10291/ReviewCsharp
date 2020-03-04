@@ -1,0 +1,156 @@
+﻿
+@{
+    ViewBag.Title = "Отзывы";
+    string transactionUID = ViewBag.TransactionUID;
+    string result = ViewBag.Result;
+}
+
+@if (string.IsNullOrEmpty(result) && !string.IsNullOrEmpty(transactionUID))
+{
+    <div class="main" id="form">
+
+        @using (Html.BeginForm("GetResult", "Home", FormMethod.Post))
+        {
+            <header>
+                <h1>Оцените впечатление<br>о&nbsp;заведении</h1>
+            </header>
+            <div class="container">
+                <div class="rating">
+                    <input type="radio" id="star5" name="rating" value="5" /><label for="star5"></label>
+                    <input type="radio" id="star4" name="rating" value="4" /><label for="star4"></label>
+                    <input type="radio" id="star3" name="rating" value="3" /><label for="star3"></label>
+                    <input type="radio" id="star2" name="rating" value="2" /><label for="star2"></label>
+                    <input type="radio" id="star1" name="rating" value="1" /><label for="star1"></label>
+                </div>
+                <div class="text" id="message"></div>
+                <p>Оставьте пожалуйста свой отзыв</p>
+                <textarea class="comm" rows="3" cols="2" name="review"></textarea>
+                <p>Выберите категории:</p>
+                <div class="category">
+                    <div class="choice choice--aava">
+                        <input id="toggleButton" type="checkbox" name="category" value="Еда">
+                        <label style="width: 32px" for="toggleButton" data-on-text="Еда" data-off-text="Еда"> </label>
+                    </div>
+                    <div class="choice choice--aava">
+                        <input id="toggleButton2" type="checkbox" name="category" value="Сервис">
+                        <label style="width: 60px" for="toggleButton2" data-on-text="Сервис" data-off-text="Сервис"></label>
+                    </div>
+                    <div class="choice choice--aava">
+                        <input id="toggleButton3" type="checkbox" name="category" value="Интерьер">
+                        <label style="width: 77px" for="toggleButton3" data-on-text="Интерьер" data-off-text="Интерьер"></label>
+                    </div>
+                    <div class="choice choice--aava">
+                        <input id="toggleButton4" type="checkbox" name="category" value="Атмосфера">
+                        <label style="width: 88px" for="toggleButton4" data-on-text="Атмосфера" data-off-text="Атмосфера"></label>
+                    </div>
+                    <div class="choice choice--aava">
+                        <input id="toggleButton5" type="checkbox" name="category" value="Ожидание">
+                        <label style="width: 85px" for="toggleButton5" data-on-text="Ожидание" data-off-text="Ожидание"></label>
+                    </div>
+                    <div class="choice choice--aava">
+                        <input id="toggleButton6" type="checkbox" name="category" value="Чистота">
+                        <label style="width: 70px" for="toggleButton6" data-on-text="Чистота" data-off-text="Чистота"></label>
+                    </div>
+                </div>
+                <p>
+                    Порекомендуете ли данную кофейню своим друзьям и близким?
+                </p>
+                <span style="font-size:15px">Оценка 0 - не порекомендую, 10 - порекомендую</span>
+                <div class="recomm">
+                    <input type="radio" id="star16" name="recomm" value="10" title="Рекомендовано 10 из 10" /><label for="star16" title="Рекомендовано 10 из 10"></label>
+                    <input type="radio" id="star15" name="recomm" value="9" title="Рекомендовано 9 из 10" /><label for="star15" title="Рекомендовано 9 из 10"></label>
+                    <input type="radio" id="star14" name="recomm" value="8" title="Рекомендовано 8 из 10" /><label for="star14"></label>
+                    <input type="radio" id="star13" name="recomm" value="7" title="Рекомендовано 7 из 10" /><label for="star13"></label>
+                    <input type="radio" id="star12" name="recomm" value="6" title="Рекомендовано 6 из 10" /><label for="star12"></label>
+                    <input type="radio" id="star11" name="recomm" value="5" title="Рекомендовано 5 из 10" /><label for="star11"></label>
+                    <input type="radio" id="star10" name="recomm" value="4" title="Рекомендовано 4 из 10" /><label for="star10"></label>
+                    <input type="radio" id="star9" name="recomm" value="3" title="Рекомендовано 3 из 10" /><label for="star9"></label>
+                    <input type="radio" id="star8" name="recomm" value="2" title="Рекомендовано 2 из 10" /><label for="star8"></label>
+                    <input type="radio" id="star7" name="recomm" value="1" title="Рекомендовано 1 из 10" /><label for="star7"></label>
+                </div>
+                <div class="text" id="title" style="color:#449728;text-align:center;font-weight:bold"></div>
+                @Html.HiddenFor(c => transactionUID)
+                <input type="hidden" name="LocalDatetime" />
+                <input type="hidden" name="LocalTimeOffset" />
+                <footer>
+                    <button type="submit" class="negative ui button">Отправить</button>
+                </footer>
+            </div>
+        }
+    </div>
+}
+
+else
+{
+    <div style="text-align:center; color:#5f4d50;margin:20% 15px 0">
+        <h1>
+            @Html.Raw(result)
+        </h1>
+    </div>
+}
+
+
+@section scripts{
+
+    <script type='text/javascript'>
+        $("#form").submit(function () {
+            var errors = 0;
+            $("div.rating").each(function () {
+                if ($(this).children("input:radio:checked").length == 0) {
+                    $(this).children(".mrating").show();
+                    errors++;
+                }
+            });
+            if (errors != 0) return false;
+        });
+
+        $(":radio").click(function () {
+            if ($(this).closest("input").siblings(".mrating")) {
+                $(this).closest("input").siblings(".mrating").hide();
+            }
+        });
+    </script>
+
+    <script type='text/javascript'>
+        document.querySelector('.rating').addEventListener('change', function (e) {
+        document.getElementById('message').innerHTML = e.target.value < 4 ? 'Мы стараемся улучшить обслуживание.<br /> Напишите пожалуйста, что вам не понравилось. <br /> Нам очень важно ваше мнение и ваш комментарий поможет нам исправить недостатки.' : '';
+        });
+    </script>
+
+    <script type='text/javascript'>
+        document.querySelector('.recomm').addEventListener('change', function (e) {
+            document.getElementById('title').innerHTML = e.target.title + '';
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('[name="LocalDatetime"]').val(OnDate());
+            $('[name="LocalTimeOffset"]').val(OnTimeZone());
+        });
+
+        function OnDate() {
+            var d = new Date();
+            var day = d.getDate();
+            var month = d.getMonth() + 1;
+            var year = d.getFullYear();
+            var h = d.getHours();
+            if (h < 10) {
+                h = '0' + h;
+            };
+            var m = d.getMinutes();
+            if (m < 10) {
+                m = '0' + m;
+            }
+            var s = d.getSeconds();
+            if (s < 10) {
+                s = '0' + s;
+            }
+            return day + '.' + month + '.' + year + ' ' + h + ':' + m + ':' + s;
+        }
+        function OnTimeZone() {
+            var d = new Date();
+            return - d.getTimezoneOffset() / 60;
+        }
+    </script>
+}

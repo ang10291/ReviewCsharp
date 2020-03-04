@@ -1,0 +1,195 @@
+﻿body {
+    margin: 0;
+    font-family: HelveticaNeue, sans-serif;
+    color: #fff;
+    font-size: 16px;
+    text-align: center
+}
+
+.main {
+    background: url(/mob_cup.jpg) center center/cover;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+h1 {
+    margin: 0
+}
+
+header {
+    padding: 25px 10px 0;
+    background: rgba(63, 40, 42, 0.81)
+}
+
+.container {
+    padding: 20px;
+    background: rgba(63, 40, 42, 0.81)
+}
+
+p {
+    margin: 25px 0px 10px;
+    font-size: 20px;
+}
+/* Звездочки */
+
+    .rating:not(:checked) > input {
+        position: absolute;
+        top: -9999px;
+        clip: rect(0,0,0,0);
+    }
+
+    .rating:not(:checked) > label {
+        float: right;
+        padding-right: 5.3%;
+        //overflow: hidden;
+        white-space: nowrap;
+        cursor: pointer;
+        font-size: 350%;
+        color: #eaeaea;
+    }
+
+        .rating:not(:checked) > label:before {
+            content: '★ ';
+        }
+
+    .rating > input:checked ~ label {
+        color: #ffe929;
+    }
+
+
+
+.label {
+    color: #666;
+    text-align: left;
+    font-size: 18px;
+    margin: 0
+}
+
+input {
+    margin: 0
+}
+/* поле комментарии */
+.comm {
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    width: 90%;
+    color: #3a2e32;
+    font-family: HelveticaNeue, sans-serif;
+    border-radius: 10px;
+    background: #eaeaea
+}
+
+.mrating {
+    display: none;
+}
+
+ .text {
+    color: #db3028;
+    font-size: 16px;
+    text-align: center;
+    display: table
+}
+
+/*категории*/
+.category {
+    max-width: 100%;
+    text-align: center;
+}
+
+.choice {
+    margin: 5px;
+    position: relative;
+    display: inline-block;
+}
+
+    .choice label {
+        display: inline-block;
+        text-align: left;
+        margin: 0;
+        padding: 5px 20px 5px;
+        height: 20px;
+        border-radius: 40px;
+        text-transform: none;
+        font-size: 18px;
+        color: #5f4d50
+    }
+
+    .choice input {
+        display: none;
+    }
+
+.choice--aava label:before, .choice--aava label:after {
+    position: absolute;
+    text-align: center;
+    -webkit-transition: all 0.2s .1s ease-out;
+    -o-transition: all 0.2s .1s ease-out;
+    transition: all 0.2s .1s ease-out;
+}
+
+.choice--aava label:before {
+    content: attr(data-on-text);
+}
+
+.choice--aava label:after {
+    content: attr(data-off-text);
+}
+
+.choice--aava input[type=checkbox] + label {
+    background: #fff;
+}
+
+.choice--aava input[type=checkbox]:checked + label {
+    background: #5f93aa;
+    font-size: 18px;
+    -webkit-box-shadow: 1px 3px 10px 0px #142831;
+    box-shadow: 1px 3px 10px 0px #142831
+}
+
+
+.choice--aava input[type=checkbox]:checked ~ label {
+    color: #fff;
+}
+
+footer {
+    padding: 50px 0 0px;
+}
+
+button {
+    border: 20px;
+    background: #5f93ab;
+    padding: 10px 40px;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 20px;
+}
+
+
+.recomm {
+    margin-bottom: 40px;
+}
+
+    .recomm:not(:checked) > input {
+        position: absolute;
+        top: -9999px;
+        clip: rect(0,0,0,0);
+    }
+
+    .recomm:not(:checked) > label {
+        float: right;
+        width: 5%;
+        padding: 0 4.5% 0 0.5%;
+        //overflow: hidden;
+        white-space: nowrap;
+        cursor: pointer;
+        font-size: 250%;
+        color: #eaeaea;
+    }
+
+        .recomm:not(:checked) > label:before {
+            content: '✓';
+        }
+
+    .recomm > input:checked ~ label {
+        color: #ffe929;
+    }
