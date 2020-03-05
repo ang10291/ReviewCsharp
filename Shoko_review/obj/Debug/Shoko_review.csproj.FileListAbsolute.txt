@@ -142,3 +142,7 @@ C:\PT\CodeWeb\Reviews\Shoko_review\Shoko_review\obj\Debug\Shoko_review.csprojRes
 C:\PT\CodeWeb\Reviews\Shoko_review\Shoko_review\obj\Debug\Shoko_review.csproj.CoreCompileInputs.cache
 C:\PT\CodeWeb\Reviews\Shoko_review\Shoko_review\obj\Debug\Shoko_review.dll
 C:\PT\CodeWeb\Reviews\Shoko_review\Shoko_review\obj\Debug\Shoko_review.pdb
+C:\Users\ANG\Documents\GitHub\ReviewCsharp\Shoko_review\obj\Debug\Shoko_review.csprojAssemblyReference.cache
+C:\Users\ANG\Documents\GitHub\ReviewCsharp\Shoko_review\obj\Debug\Shoko_review.csproj.CoreCompileInputs.cache
+C:\Users\ANG\Documents\GitHub\ReviewCsharp\Shoko_review\obj\Debug\Shoko_review.dll
+C:\Users\ANG\Documents\GitHub\ReviewCsharp\Shoko_review\obj\Debug\Shoko_review.pdb
